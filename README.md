@@ -5,6 +5,6 @@ This service is part of the [signomix](https://github.com/signomix/signomix) pro
 Build and run signomix-database docker image with:
 
 ```shell
-$ docker build -t signomix-database .
+$ docker build --build-arg dbpassword=$dbpassword -t signomix-database .
 $ docker run signomix-database
 ```
