@@ -11,6 +11,9 @@ DB_LIB=h2-1.4.200.jar
 sed -i "s|\$DB_PASSWORD|${DB_PASSWORD}|"  init.sql
 
 echo "jdbc:h2:/$DB_BASEDIR/iotdata"
+echo "$DB_PASSWORD"
+echo "$DB_SHUTDOWN_PASSWORD"
+echo "starting ..."
 #iotdata
 java -cp $DB_LIB org.h2.tools.RunScript -url jdbc:h2:/$DB_BASEDIR/iotdata -user sa -script init.sql
 if [ "$?" -ne "0" ]; then
